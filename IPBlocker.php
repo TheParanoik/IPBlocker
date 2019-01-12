@@ -19,7 +19,7 @@
 ***************************************************/
 
 require("IPBsettings.php");
-function ipb_ip{
+function ipb_ip(){
   if(isset($HTTP_X_FORWARDED_FOR)){
 	 $ip = $HTTP_X_FORWARDED_FOR;
 	 }elseif(isset($HTTP_X_FORWARDED)){
@@ -30,11 +30,11 @@ function ipb_ip{
 	 $ip = $HTTP_CLIENT_IP;
 	 }elseif(isset($FORWARDED_FOR_IP)){
 	 $ip = $FORWARDED_FOR_IP;
-	 }else{
-   $ip = $_SERVER['REMOTE_ADDR'];
-	 }
-$checked=0;
- while($checked == count($iplist)){
+       }else{
+          $ip = $_SERVER['REMOTE_ADDR'];
+       }
+
+ foreach($checked == count($iplist)){
    if($ip == $banip[$checked]){
 	 header ('Location:'.$ipbanpage);
 	 die;
