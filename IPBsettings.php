@@ -7,7 +7,6 @@ $ipbanpage = "";//link to Your page if You ban IP
 
 $banip = array(); //input IP to ban: '127.0.0.1', 
 $trustip = array(); //input IP to ban: '127.0.0.1', 
-$proxyban = false; //change to "true" if You want to ban proxy traffic 
 // Delete "#" in lines with countries where You want to block country
 $CountryName = array(
 #    'AF' => 'Afghanistan',
