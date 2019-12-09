@@ -1,21 +1,19 @@
-# IPBlocker 1.0
+# IPBlocker 2.0
 OpenSource IP banning system
 
 ### features:
 
+- ban IP
+- block proxy trafic on Your page
+- block country
+- Trusted IP (only trusted IP can acces the page)
 
--ban IP
+### Change log
 
--block proxy trafic on Your page
+Object Oriented
 
--block country
+### Chandes planned in 2.1:
 
--Trusted IP (only trusted IP can acces the page)
-
-
-### Chandes planned in 1.1:
-
--better interface
-
+- better interface
 
 disclaimer: coded for fun
