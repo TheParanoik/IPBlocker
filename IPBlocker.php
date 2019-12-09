@@ -19,7 +19,8 @@
 ***************************************************/
 
 require("IPBsettings.php");
-function ipb_ip(){
+class ipb{
+function ip(){
   if(isset($HTTP_X_FORWARDED_FOR)){
 	 $ip = $HTTP_X_FORWARDED_FOR;
 	 }elseif(isset($HTTP_X_FORWARDED)){
@@ -44,7 +45,7 @@ function ipb_ip(){
 	 }
  }
 }
-function ipb_country(){
+function country(){
 $ip = $_SERVER['REMOTE_ADDR'];
 $country = 'http://api.hostip.info/country.php?ip='.$ip;
   if(isset($CountryName[$country])){
@@ -53,7 +54,7 @@ $country = 'http://api.hostip.info/country.php?ip='.$ip;
 	}
 }
 
-function ipb_proxy(){
+function proxy(){
     $proxyheaders = array(
         'HTTP_VIA',
         'HTTP_X_FORWARDED_FOR',
@@ -73,12 +74,12 @@ function ipb_proxy(){
     );
     foreach($proxyheaders as $x){
         if (isset($_SERVER[$x])){
-				 header("Location:".$proxybanpage);
-				}
+		header("Location:".$proxybanpage);
+	}
 				
     }
 }
-function ipb_trustedip(){
+function trustedip(){
 $ip = $_SERVER['REMOTE_ADDR'];
  foreach($trustip as $x){
   if($ip == $trustip[$x]){
@@ -87,5 +88,7 @@ $ip = $_SERVER['REMOTE_ADDR'];
     header("Location:".$UntrustedIPpage);
 	}
  }
+}
+	
 }
 ?>
