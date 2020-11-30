@@ -1,26 +1,8 @@
 <?php
-/***************************************************
-*                                                  *
-*                IPBlocker v1.0                    *
-*                                                  *
-*        GitHub: https://github.com/TheParanoik    *
-*                                                  *
-*  Use:                                            *
-*    <?php require('[file path]/IPBlocker.php');   *
-*      [functions You want to use]; ?>             *
-*                                                  *
-*  IPBlocker is an Open Source software            *
-*    don't use it for commercial reasons           *
-*      that mean:                                  *
-*       -don't sell it                             *
-*     -don't tell it's Your                        *
-*    -if You use it on commercial website          *
-*              publish My github link              *
-***************************************************/
 
 require("IPBsettings.php");
 class ipb{
-function ip(){
+public function ip(){
   if(isset($HTTP_X_FORWARDED_FOR)){
 	 $ip = $HTTP_X_FORWARDED_FOR;
 	 }elseif(isset($HTTP_X_FORWARDED)){
@@ -45,7 +27,7 @@ function ip(){
 	 }
  }
 }
-function country(){
+public function country(){
 $ip = $_SERVER['REMOTE_ADDR'];
 $country = 'http://api.hostip.info/country.php?ip='.$ip;
   if(isset($CountryName[$country])){
@@ -54,7 +36,7 @@ $country = 'http://api.hostip.info/country.php?ip='.$ip;
 	}
 }
 
-function proxy(){
+public function proxy(){
     $proxyheaders = array(
         'HTTP_VIA',
         'HTTP_X_FORWARDED_FOR',
@@ -79,7 +61,7 @@ function proxy(){
 				
     }
 }
-function trustedip(){
+public function trustedip(){
 $ip = $_SERVER['REMOTE_ADDR'];
  foreach($trustip as $x){
   if($ip == $trustip[$x]){
