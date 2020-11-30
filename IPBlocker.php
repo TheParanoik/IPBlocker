@@ -3,7 +3,7 @@
 *                                                  *
 *                IPBlocker v1.0                    *
 *                                                  *
-*        GitHub: https://github.com/MPewny         *
+*        GitHub: https://github.com/TheParanoik    *
 *                                                  *
 *  Use:                                            *
 *    <?php require('[file path]/IPBlocker.php');   *
